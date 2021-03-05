@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db.config');
 
-const Room = sequelize.define('objects', {
+const Object = sequelize.define('object', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -10,4 +10,4 @@ const Room = sequelize.define('objects', {
   name: Sequelize.STRING
 });
 
-module.exports = Room;
+module.exports = Object;

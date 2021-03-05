@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db.config');
 
-const Room = sequelize.define('rooms', {
+const Room = sequelize.define('room', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -13,7 +13,7 @@ const Room = sequelize.define('rooms', {
   west: Sequelize.INTEGER, // referring to a connected room
   east: Sequelize.INTEGER, // referring to a connected room
   objects: {
-    type: Sequelize.ARRAY(Sequelize.STRING), // of Objects
+    type: Sequelize.JSON(Sequelize.STRING), // of Objects
     allowNull: true
   }
 });

@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest",
         "build": "docker build -t a-maze-ingly:dev .",
-        "start": "npm run build && docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 9090:9090 -e CHOKIDAR_USEPOLLING=true a-maze-ingly:dev",
+        "start": "npm run build && docker run -d -it --rm -v ${PWD}:/app -v /app/node_modules -p 9090:9090 -e CHOKIDAR_USEPOLLING=true a-maze-ingly:dev",
         "clean": "docker rm -f $(docker ps -a -q)"
     },
     "keywords": [],
