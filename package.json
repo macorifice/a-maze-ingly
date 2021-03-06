@@ -5,9 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "build": "docker build -t a-maze-ingly:dev .",
-        "start": "npm run build && docker run -d -it --rm -v ${PWD}:/app -v /app/node_modules -p 9090:9090 -e CHOKIDAR_USEPOLLING=true a-maze-ingly:dev",
-        "clean": "docker rm -f $(docker ps -a -q)"
+        "start": "docker build -t a-maze-ingly . && docker run -d -it --name a-maze-ingly --rm -v ${PWD}:/app -v /app/node_modules -p 9090:9090 -e CHOKIDAR_USEPOLLING=true a-maze-ingly",
+        "clean": "docker rm -f $(docker ps -a -q)",
+        "docker:build": "docker exec -it -d a-maze-ingly bash && cd scripts && chmod +x build.sh && ./build.sh",
+        "docker:test": "docker exec -it -d a-maze-ingly bash && cd scripts && chmod +x test.sh && ./test.sh",
+        "docker:run": "docker exec -it -d a-maze-ingly bash && cd scripts && chmod +x run.sh && ./run.sh"
     },
     "keywords": [],
     "author": "",
