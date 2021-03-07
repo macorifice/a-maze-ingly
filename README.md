@@ -18,6 +18,28 @@ Run tests
 npm run test
 ```
 
+Run the `test` script inside the container after spinning it
+```shell
+npm run docker:test
+```
+
+Run the `build` script inside the container after spinning it
+```shell
+npm run docker:build
+```
+
+Run the `run` script inside the container after spinning it
+```shell
+npm run docker:run
+```
+
+The result is shown in a folder called `test/build/run`-execution with inside the log files with the execution timestamp
+
+Explore API at [http://localhost:9090/api-docs/](http://localhost:9090/api-docs/)
+
+Swagger UI looks like this:
+![A-Maze-ingly-Api](./assets/swagger.png)
+
 #### License
 [MIT](https://choosealicense.com/licenses/mit/)
 
